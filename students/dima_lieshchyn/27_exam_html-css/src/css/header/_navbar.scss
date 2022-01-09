@@ -1,0 +1,122 @@
+.header-wrapper {
+    display: flex;
+    padding: 28px 0 28px;
+    font-size: 14px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+
+    @include media('lg') {
+        margin-left: $default-gap;
+    }
+
+    &__logo-img {}
+}
+
+.menu-wrapper {}
+
+.menu {
+    display: flex;
+
+    @include media('sm') {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        filter: drop-shadow(8px 8px 10px $color-dark-blue);
+        background-color: rgba(255, 255, 255, .7);
+        color: transparent;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        overflow-y: auto;
+        box-sizing: border-box;
+        transform: translateY(-200%);
+        transition: transform .5s ease-in-out;
+    }
+
+    &__link {
+        padding-right: 32px;
+
+        @include media('sm') {
+            border: 1px solid $color-dark-blue;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    &__item {
+        text-decoration: none;
+        color: $color-dark-blue;
+
+        @include media('sm') {
+            z-index: 9999;
+        }
+    }
+}
+
+.menu-open-input-btn {
+    @include visuality-hidden;
+
+    &:checked {
+        &~.menu {
+            transform: translateY(0);
+        }
+    }
+
+}
+
+.menu-open-btn {
+    width: $default-gap * 3;
+    height: $default-gap * 2;
+    border-radius: 4px;
+    border: 1px solid $color-dark-blue;
+    margin-right: $default-gap;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.btn {
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+
+    @include media('lg') {
+        margin-right: $default-gap;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-color: rgba(38, 42, 63, .3);
+        position: absolute;
+        top: -7px;
+        left: -7px;
+        z-index: 1;
+    }
+
+    &__btn-link {
+        z-index: 10;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__btn-img {
+        &:nth-child(2) {
+            display: none;
+        }
+    }
+}
