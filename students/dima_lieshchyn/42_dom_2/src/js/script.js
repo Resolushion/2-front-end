@@ -1,6 +1,12 @@
-import songsList from "./songs-list";
+// ..Плейлист песен
+import { playList } from "./songs-list";
+// .. 1 способ создания плейлиста
 import { cElem } from "./create-element";
-import createOlLi from "./createElement";
+// .. 2 способ создания плейлиста
+import { createOlLi, addSong } from "./createElement";
+
+const songs = Array.from(playList, x => x.song + ' ' + x.author);
+//Создать список песен двумя способами
 
 document.body.append(cElem({
     tag: 'ol',
@@ -11,38 +17,39 @@ document.body.append(cElem({
     content: [
         cElem({
             tag: 'li',
-            content: songsList[0],
+            content: songs[0],
         }),
         cElem({
             tag: 'li',
-            content: songsList[1],
+            content: songs[1],
         }),
         cElem({
             tag: 'li',
-            content: songsList[2],
+            content: songs[2],
         }),
         cElem({
             tag: 'li',
-            content: songsList[3],
+            content: songs[3],
         }),
         cElem({
             tag: 'li',
-            content: songsList[4],
+            content: songs[4],
         }),
         cElem({
             tag: 'li',
-            content: songsList[5],
+            content: songs[5],
         }),
         cElem({
             tag: 'li',
-            content: songsList[6],
+            content: songs[6],
         }),
         cElem({
             tag: 'li',
-            content: songsList[7],
+            content: songs[7],
         }),
     ],
 }));
 
-createOlLi(songsList);
+addSong(playList, 'prosto', 'pesnya')
+createOlLi();
 

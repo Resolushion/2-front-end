@@ -1,4 +1,7 @@
-function createOlLi(arr) {
+import { playList } from "./songs-list";
+
+function createOlLi() {
+    const arr = Array.from(playList, x => x.song + ' ' + x.author);
     let temp = '<ol>';
     for (let i = 0; i < arr.length; i++) {
         temp = temp + '<li>' + arr[i] + '</li>';
@@ -14,4 +17,10 @@ function stringToHtml(stringHtml) {
     return tag.firstChild;
 }
 
-export default createOlLi;
+function addSong(pl, author, song) {
+    pl.push({
+        author: author.toUpperCase(),
+        song: song.toUpperCase()
+    });
+}
+export { createOlLi, addSong };

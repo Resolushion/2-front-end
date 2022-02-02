@@ -120,7 +120,23 @@ function addAttr(node, attr) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function createOlLi(arr) {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createOlLi": function() { return /* binding */ createOlLi; },
+/* harmony export */   "addSong": function() { return /* binding */ addSong; }
+/* harmony export */ });
+/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
+/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _songs_list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./songs-list */ "./src/js/songs-list.js");
+
+
+
+
+function createOlLi() {
+  var arr = Array.from(_songs_list__WEBPACK_IMPORTED_MODULE_2__.playList, function (x) {
+    return x.song + ' ' + x.author;
+  });
   var temp = '<ol>';
 
   for (var i = 0; i < arr.length; i++) {
@@ -137,7 +153,14 @@ function stringToHtml(stringHtml) {
   return tag.firstChild;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (createOlLi);
+function addSong(pl, author, song) {
+  pl.push({
+    author: author.toUpperCase(),
+    song: song.toUpperCase()
+  });
+}
+
+
 
 /***/ }),
 
@@ -149,45 +172,56 @@ function stringToHtml(stringHtml) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _songs_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./songs-list */ "./src/js/songs-list.js");
-/* harmony import */ var _create_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-element */ "./src/js/create-element.js");
-/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createElement */ "./src/js/createElement.js");
+/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
+/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _songs_list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./songs-list */ "./src/js/songs-list.js");
+/* harmony import */ var _create_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-element */ "./src/js/create-element.js");
+/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createElement */ "./src/js/createElement.js");
 
 
 
-document.body.append((0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+
+
+var songs = Array.from(_songs_list__WEBPACK_IMPORTED_MODULE_2__.playList, function (x) {
+  return x.song + ' ' + x.author;
+}); //Создать список песен двумя способами
+
+document.body.append((0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
   tag: 'ol',
   class: 'songsList',
   attr: {
     title: 'songs list'
   },
-  content: [(0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+  content: [(0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][0]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[0]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][1]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[1]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][2]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[2]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][3]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[3]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][4]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[4]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][5]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[5]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][6]
-  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
+    content: songs[6]
+  }), (0,_create_element__WEBPACK_IMPORTED_MODULE_3__.cElem)({
     tag: 'li',
-    content: _songs_list__WEBPACK_IMPORTED_MODULE_0__["default"][7]
+    content: songs[7]
   })]
 }));
-(0,_createElement__WEBPACK_IMPORTED_MODULE_2__["default"])(_songs_list__WEBPACK_IMPORTED_MODULE_0__["default"]);
+(0,_createElement__WEBPACK_IMPORTED_MODULE_4__.addSong)(_songs_list__WEBPACK_IMPORTED_MODULE_2__.playList, 'prosto', 'pesnya');
+(0,_createElement__WEBPACK_IMPORTED_MODULE_4__.createOlLi)();
 
 /***/ }),
 
@@ -199,12 +233,9 @@ document.body.append((0,_create_element__WEBPACK_IMPORTED_MODULE_1__.cElem)({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "playList": function() { return /* binding */ playList; }
+/* harmony export */ });
 var playList = [{
   author: "LED ZEPPELIN",
   song: "STAIRWAY TO HEAVEN"
@@ -230,10 +261,7 @@ var playList = [{
   author: "METALLICA",
   song: "ENTER SANDMAN"
 }];
-var songsList = Array.from(playList, function (x) {
-  return x.song + ' ' + x.author;
-});
-/* harmony default export */ __webpack_exports__["default"] = (songsList);
+
 
 /***/ }),
 

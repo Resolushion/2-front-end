@@ -32,5 +32,5 @@ const playList = [
         song: "ENTER SANDMAN"
     }
 ];
-const songsList = Array.from(playList, x => x.song + ' ' + x.author);
-export default songsList;
+
+export { playList };
