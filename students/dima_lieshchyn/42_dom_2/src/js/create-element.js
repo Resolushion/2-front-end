@@ -1,4 +1,3 @@
-
 function cElem(options = {}) {
     if (!options.tag) return;
 
@@ -39,6 +38,5 @@ function addAttr(node, attr) {
         node.setAttribute(key, attr[key]);
     }
 }
-
 
 export { cElem, addContent, addClass, addAttr };
